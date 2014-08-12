@@ -1,0 +1,40 @@
+div.automodal {
+  display: none;
+  background: rgba(0,0,0,0.8);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+div.automodal .content {
+  min-width: 300px;
+  background: #fff;
+}
+div.automodal .header {
+  background: #eee;
+  padding: 10px 15px;
+  color: #333;
+  font-size: 14pt;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+  cursor: default;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+div.automodal .footer {
+  padding: 15px;
+  color: #333;
+  border-top: 1px solid #bbb;
+  background: #fff;
+}
+div.automodal .close {
+  float: right;
+  cursor: pointer;
+  font-family: arial;
+  color: #aaa;
+}
+div.automodal .wrapper {
+  border: 1px solid #333;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}

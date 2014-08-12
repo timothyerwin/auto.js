@@ -1,0 +1,35 @@
+{
+  "name": "auto.js",
+  "version": "0.2.29",
+  "authors": [
+    "Tim Erwin <tim.erwin@gmail.com>"
+  ],
+  "description": "common js controls",
+  "keywords": [
+    "javascript",
+    "dropdown",
+    "grid",
+    "popover",
+    "tabs",
+    "modal"
+  ],
+  "license": "MIT",
+  "homepage": "autojs.azurewebsites.net",
+  "main": "dist",
+  "dependencies": {
+    "jquery": ">=1.9.0"
+  },
+  "ignore": [
+    "**/.*",
+    "*.json",
+    "*.md",
+    "server.js",
+    "app.js",
+    "gulpfile.js",
+    "node_modules",
+    "public",
+    "routes",
+    "screenshots",
+    "views"
+  ]
+}

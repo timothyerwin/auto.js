@@ -1,0 +1,49 @@
+extends demo.layout
+
+block sub
+  style.
+    input[type=button]{
+      width: 110px
+    }
+  br
+  div.clearfix
+    div.dropdown(style='float:right')
+      input(type='button', value='Right').square
+      ul(style='right:0')
+        li
+          a(href='http://en.wikipedia.org/wiki/Japan', target='blank') Japan
+        li
+          a(href='http://en.wikipedia.org/wiki/Netherlands', target='blank') Netherlands
+        li
+          a(href='http://en.wikipedia.org/wiki/Brazil', target='blank') Brazil
+        li
+          a Nothing
+
+    div.dropdown(style='float:left')
+      input(type='button', value='Left').square
+      ul
+        li
+          a(href='http://en.wikipedia.org/wiki/Japan', target='blank') Japan
+        li
+          a(href='http://en.wikipedia.org/wiki/Netherlands', target='blank') Netherlands
+        li
+          a(href='http://en.wikipedia.org/wiki/Brazil', target='blank') Brazil
+        li
+          a Nothing
+
+  br
+  div.dropdown(style='margin:50px 0')
+    ul
+      li
+        a(href='http://en.wikipedia.org/wiki/Japan', target='blank') Japan
+      li
+        a(href='http://en.wikipedia.org/wiki/Netherlands', target='blank') Netherlands
+      li
+        a(href='http://en.wikipedia.org/wiki/Brazil', target='blank') Brazil
+      li
+        a Nothing
+    input(type='button', value='Top').square
+
+
+  script.
+    $(".dropdown").autodropdown();

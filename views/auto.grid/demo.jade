@@ -1,0 +1,71 @@
+extends ../layout
+
+block content
+    link(rel='stylesheet', href='/local/auto/css/auto.grid.css')
+    script(src='/local/auto/js/auto.tabs.js')
+    script(src='/local/auto/js/auto.grid.js')
+
+    style.
+      ul#demotabs{
+          
+      }
+
+      ul#demotabs li.active, ul#demotabs li:hover {
+          border-bottom: 4px solid #e200be;
+        }
+
+      ul#demotabs li.active a {
+          font-weight: bold;
+        }
+
+      ul#demotabs li a{
+          color: #555;
+        }
+
+    h1 grid
+    br
+    ul#demotabs.autotab.filled
+      li.active
+        a(data-tab='#simple') Simple
+      li
+        a(data-tab='#images') Images
+      li
+        a(data-tab='#render') Render
+      li
+        a(data-tab='#action') Action
+      li
+        a(data-tab='#select') Select
+      li
+        a(data-tab='#expand') Expand
+      li
+        a(data-tab='#paging') Paging
+      li
+        a(data-tab='#sorting') Sorting
+
+    mixin tab(name, jsfiddle)
+      div.tab(id='#{name}')
+        block
+        div(id='autogrid-#{name}')
+        script(src="/local/js/auto.grid/demo.#{name}.js")
+        div(style='margin: 15px 0')
+          a(target="_blank" href='http://jsfiddle.net/timothyerwin/#{jsfiddle}/') jsfiddle.net
+
+    div.autotab(style='margin-top:10px')
+      +tab('simple', 'UZmLu')
+      +tab('images', '2ZxpM')
+      +tab('render', 'DMCuw')
+      +tab('action', 'qy7Hf')
+      +tab('select', '2MnKK')
+      +tab('expand', 'TR4qK')
+      +tab('sorting', 'YHT7c')
+      +tab('paging', 'g9hkq')
+        script(src="/moment.js/moment.min.js")
+        input(type='button', value='Basic' style='margin-right:10px;width:120px')#pager-basic.square
+        input(type='button', value='Infinite', style='width:120px')#pager-infinite.square
+        br
+        br
+        img(id="spinner", src='/local/images/ajaxspinner.gif')
+
+
+    script.
+      $("#demotabs").autotabs();

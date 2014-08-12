@@ -1,0 +1,32 @@
+div.tabstrip {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+div.autotab .tab {
+  display: none;
+}
+ul.autotab {
+  list-style-type: none;
+}
+ul.autotab.filled {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+}
+ul.autotab li {
+  display: inline-block;
+}
+ul.autotab li a {
+  font-size: 1.3em;
+  color: #09c;
+  display: inline-block;
+  padding: 10px;
+  padding-bottom: 9px;
+  padding-top: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+ul.autotab li.active,
+ul.autotab li:hover {
+  border-bottom: 4px solid #444;
+}

@@ -1,0 +1,42 @@
+extends demo.layout
+
+block sub
+
+  style.
+    ul#demotabs li.active, ul#demotabs li:hover {
+        border-bottom: 4px solid #e200be;
+      }
+
+    ul#demotabs li.active a {
+        font-weight: bold;
+      }
+
+    ul#demotabs li a{
+        color: #555;
+      }
+
+  br
+  ul#demotabs.autotab.filled
+   li.active
+     a(data-tab='#enya') Enya
+   li
+     a(data-tab='#beyonce') Beyonce
+   li
+     a(data-tab='#katyperry') Katy Perry
+
+  div.autotab(style='background:#fff;padding:10px;border:1px solid #ddd;margin-top:10px')
+    div.tab#enya
+      iframe(width='905', height='480', src='//www.youtube.com/embed/7wfYIMyS_dI', frameborder='0', allowfullscreen='')
+    div.tab#beyonce
+      iframe(width='905', height='480', src='//www.youtube.com/embed/JlxByc0-V40', frameborder='0', allowfullscreen='')
+    div.tab#katyperry
+      iframe(width='905', height='480', src='//www.youtube.com/embed/0KSOMA3QBU0', frameborder='0', allowfullscreen='')
+
+  script.
+    $("#demotabs").autotabs({
+      show: function(tab){
+        console.log("show=", tab);
+      },
+      hide: function(tab){
+        console.log("hide=", tab)
+        }});

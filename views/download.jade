@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 download
+
+  br
+  div
+    h2.upper.hotpink version
+    h1.hotpink #{version}
+  br
+  br
+  a(href='/zip/auto.js-#{version}.zip')
+    img(src='/local/images/download-now-button.png')
