@@ -1,6 +1,6 @@
 var auto = (function(auto, $) {
 
-  $.fn.autotabs = function(o) {
+  $.fn.autotabs = function(o, t) {
     return this.each(function() {
       this.tabs = {};
       this.tabs.settings = o;
@@ -22,20 +22,35 @@ var auto = (function(auto, $) {
         });
       };
 
-      $.each(tabs.find("li a"), function() {
-        var a = $(this);
+      var showtab = function(a) {
         var id = a.data("tab");
         var tab = $(id);
 
+        hidetabs();
+
+        a.parent().addClass("active");
+
+        tab.show();
+
+        if (o && o.show)
+          o.show(id);
+      };
+
+      if (typeof o === 'string') {
+
+        if (o === 'show') {
+          var a = $('li a[data-tab="' + t + '"]');
+          
+          showtab(a);
+        }
+
+      }
+
+      $.each(tabs.find("li a"), function() {
+        var a = $(this);
+
         a.on("click", function() {
-          hidetabs();
-
-          a.parent().addClass("active");
-
-          tab.show();
-
-          if (o && o.show)
-            o.show(id);
+          showtab(a);
         });
       });
 
