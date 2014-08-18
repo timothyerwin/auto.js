@@ -15,7 +15,7 @@ var auto = (function(auto, $) {
 
           a.parent().removeClass("active");
 
-          tab.hide();
+          tab.css('display','none');
 
           if (o && o.hide)
             o.hide(id);
@@ -30,7 +30,7 @@ var auto = (function(auto, $) {
 
         a.parent().addClass("active");
 
-        tab.show();
+        tab.css('display','block');
 
         if (o && o.show)
           o.show(id);
@@ -40,7 +40,7 @@ var auto = (function(auto, $) {
 
         if (o === 'show') {
           var a = $('li a[data-tab="' + t + '"]');
-          
+
           showtab(a);
         }
 
