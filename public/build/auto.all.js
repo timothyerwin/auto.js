@@ -1387,8 +1387,9 @@ var auto = (function(auto, $) {
     $(".popover:visible").hide();
   };
 
-  $("body").on('click touchstart', function() {
-    hideAll();
+  $("body").on('click touchstart', function(e) {
+    if (!e.target.popover)
+      hideAll();
   });
 
   var cancelEvent = function(e) {
@@ -1404,71 +1405,114 @@ var auto = (function(auto, $) {
     return this.each(function() {
 
       var activator = $(this);
-      var popover = $(o.popover);
+      var popover = $(this.popover || o.popover);
 
-      o.position = o.position || "bottom center";
+      this.popover = this.popover || popover;
 
-      var positions = o.position.split(" ");
+      if (typeof(o) != 'string') {
+        o = $.extend({
+          trigger: 'click',
+          position: 'bottom center'
+        }, o);
 
-      if (positions.length == 1)
-        positions.push("center");
+        this.popover.settings = o;
+      }
 
-      var ppos = positions[0];
-      var apos = positions[1];
+      var settings = this.popover.settings;
 
-      var positionLookup = {
-        "bottom": {
-          my: apos + " top",
-          at: apos + " bottom+15px",
-          arrow: "top"
-        },
-        "top": {
-          my: apos + " bottom",
-          at: apos + " top-15px",
-          arrow: "bottom"
-        },
-        "left": {
-          my: "right " + apos,
-          at: "left-15px " + apos + function() {
-            if (apos == "top") return "-15px";
-            else if (apos == "bottom") return "+15px";
-            return "+0px";
-          }(),
-          arrow: "right"
-        },
-        "right": {
-          my: "left " + apos,
-          at: "right+15px " + apos + function() {
-            if (apos == "top") return "-15px";
-            else if (apos == "bottom") return "+15px";
-            return "+0px";
-          }(),
-          arrow: "left"
+      var position = function() {
+        var s = settings;
+
+        s.position = s.position || "bottom center";
+
+        var positions = s.position.split(" ");
+
+        if (positions.length == 1)
+          positions.push("center");
+
+        var ppos = positions[0];
+        var apos = positions[1];
+
+        var positionLookup = {
+          "bottom": {
+            my: apos + " top",
+            at: apos + " bottom+15px",
+            arrow: "top"
+          },
+          "top": {
+            my: apos + " bottom",
+            at: apos + " top-15px",
+            arrow: "bottom"
+          },
+          "left": {
+            my: "right " + apos,
+            at: "left-15px " + apos + function() {
+              if (apos == "top") return "-15px";
+              else if (apos == "bottom") return "+15px";
+              return "+0px";
+            }(),
+            arrow: "right"
+          },
+          "right": {
+            my: "left " + apos,
+            at: "right+15px " + apos + function() {
+              if (apos == "top") return "-15px";
+              else if (apos == "bottom") return "+15px";
+              return "+0px";
+            }(),
+            arrow: "left"
+          }
+        };
+
+        var pos = positionLookup[ppos];
+
+        if (!popover.hasClass('arrow-' + pos.arrow)) {
+          popover.addClass("arrow-" + pos.arrow);
         }
+
+        if (!popover.hasClass(apos)) {
+          popover.addClass(apos);
+        }
+
+        var state = {
+          my: pos.my,
+          at: pos.at,
+          of: activator,
+          collision: "none"
+        };
+
+        popover.position(state);
       };
 
-      var pos = positionLookup[ppos];
+      if (typeof(o) === 'string') {
+        if (o === 'show') {
+          popover.show();
+        } else if (o === 'hide') {
+          popover.hide();
+        } else if (o === 'toggle') {
+          popover.toggle();
+        }
 
-      popover.addClass("arrow-" + pos.arrow).addClass(apos);
+        return;
+      }
 
-      popover.position({
-        my: pos.my,
-        at: pos.at,
-        of: activator,
-        collision: "none"
-      });
+      position();
 
       popover.on('click touchstart', cancelEvent);
 
       activator.on('touchstart', cancelEvent);
-      activator.on('click', function(e) {
 
+      activator.on(o.trigger, function(e) {
         cancelEvent(e);
 
-        hideAll();
+        var active = $(".popover:visible");
+
+        if(active.length === 1 && popover[0] != active[0])
+          hideAll();
 
         popover.toggle();
       });
+
     });
   };
 

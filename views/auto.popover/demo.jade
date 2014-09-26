@@ -64,6 +64,13 @@ block sub
           +popover('bottom', 'right')
 
   div(style='height:20px') &nbsp;
+  div
+    input(type='button', value='manual', id='button-manual').square
+    div.popover(style='padding:20px', id='popover-manual')
+        h1 popover
+        br
+        a(href='http://google.com', target='blank') www.google.com
+
   script.
     var types = ["bottom left","top left","left top","right top",
     "left center", "right center", "left bottom", "right bottom",
@@ -77,3 +84,13 @@ block sub
             position: v
           });
       });
+
+    $('#button-manual').autopopover({
+        popover: $("#popover-manual"),
+        position: 'bottom left',
+        trigger: 'manual'
+      });
+
+    $('#button-manual').on('click', function(e){
+      $(this).autopopover('toggle');
+    });
