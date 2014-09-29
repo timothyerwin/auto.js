@@ -1404,6 +1404,10 @@ var auto = (function(auto, $) {
   $.fn.autopopover = function(o) {
     return this.each(function() {
 
+      if(typeof(o) != 'string' && this.popover){
+        return;
+      }
+
       var activator = $(this);
       var popover = $(this.popover || o.popover);
 
