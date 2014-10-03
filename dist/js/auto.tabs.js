@@ -1,4 +1,6 @@
-var auto = (function(auto, $) {
+var auto = auto || {};
+
+(function(auto, $) {
 
   $.fn.autotabs = function(o, t) {
     return this.each(function() {

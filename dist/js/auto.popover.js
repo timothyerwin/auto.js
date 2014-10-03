@@ -525,7 +525,9 @@
 
 }));
 
-var auto = (function(auto, $) {
+var auto = auto || {};
+
+(function(auto, $) {
 
   var hideAll = function() {
     $(".popover:visible").hide();

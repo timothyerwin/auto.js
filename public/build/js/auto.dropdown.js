@@ -1,4 +1,6 @@
-var auto = (function(auto, $) {
+var auto = auto || {};
+
+(function(auto, $) {
 
   var hideAll = function() {
     $(".dropdown ul:visible").hide();

@@ -19,7 +19,11 @@
   };
 })(jQuery);
 
-var auto = (function(auto, $) {
+var auto = auto || {};
+
+var auto = auto || {};
+
+(function(auto, $) {
 
   var hideAll = function() {
     $(".dropdown ul:visible").hide();
@@ -786,7 +790,9 @@ auto.grid.actions.expand = function(settings) {
   };
 };
 
-var auto = (function(auto, $) {
+var auto = auto || {};
+
+(function(auto, $) {
 
   var create = function(target, o) {
 
@@ -1381,7 +1387,9 @@ var auto = (function(auto, $) {
 
 }));
 
-var auto = (function(auto, $) {
+var auto = auto || {};
+
+(function(auto, $) {
 
   var hideAll = function() {
     $(".popover:visible").hide();
@@ -1524,7 +1532,9 @@ var auto = (function(auto, $) {
 
 }(auto || {}, jQuery));
 
-var auto = (function(auto, $) {
+var auto = auto || {};
+
+(function(auto, $) {
 
   $.fn.autotabs = function(o, t) {
     return this.each(function() {
