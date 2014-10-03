@@ -629,10 +629,12 @@ var auto = (function(auto, $) {
           collision: "none"
         };
 
-        popover.position(state);
+        popover.css("top", '').css('left', '').position(state);
       };
 
       if (typeof(o) === 'string') {
+        position();
+
         if (o === 'show') {
           popover.show();
         } else if (o === 'hide') {
@@ -643,8 +645,6 @@ var auto = (function(auto, $) {
 
         return;
       }
-
-      position();
 
       popover.on('click touchstart', cancelEvent);
 
@@ -658,10 +658,12 @@ var auto = (function(auto, $) {
         if(active.length === 1 && popover[0] != active[0])
           hideAll();
 
+        position();
+
         popover.toggle();
       });
 
     });
   };
 
-}(auto, jQuery));
+}(auto || {}, jQuery));

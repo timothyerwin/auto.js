@@ -59,4 +59,4 @@ var auto = (function(auto, $) {
     });
   };
 
-}(auto, jQuery));
+}(auto || {}, jQuery));

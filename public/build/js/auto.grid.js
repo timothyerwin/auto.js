@@ -1,4 +1,4 @@
-var auto = {};
+var auto = auto || {};
 
 auto.grid = function(settings) {
 
