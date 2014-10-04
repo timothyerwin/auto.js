@@ -18,5 +18,3 @@
     return this;
   };
 })(jQuery);
-
-var auto = auto || {};

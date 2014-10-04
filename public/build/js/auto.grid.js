@@ -157,11 +157,11 @@ auto.grid.prototype.render = function(state, settings) {
       rowState.row.append(td);
 
       if (self.settings.render && self.settings.render.cells) {
-        var cellState = $.extend(rowState, {
+        var cellState = $.extend({
           cell: td,
           column: column,
           cellData: v
-        });
+        },rowState);
 
         var rr = self.settings.render.cells(cellState);
 
