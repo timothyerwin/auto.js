@@ -205,9 +205,9 @@ auto.grid.prototype.render = function(state, settings) {
         rowState.row.append(td);
 
         if (v.cell && v.cell.render)
-          v.cell.render($.extend(rowState, {
+          v.cell.render($.extend({
             cell: td
-          }));
+          },rowState));
       });
     }
   };
