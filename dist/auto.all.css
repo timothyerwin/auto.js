@@ -359,7 +359,7 @@ div.autostrip ul li {
 }
 div.autostrip ul li a {
   color: #777;
-  color: #5CBA1D;
+  color: #5cba1d;
   display: inline-block;
   font-weight: bold;
   padding: 7px 20px;
@@ -393,17 +393,16 @@ ul.autotab li {
   display: inline-block;
 }
 ul.autotab li a {
-  font-size: 1.3em;
-  color: #09c;
+  color: #444;
   display: inline-block;
-  padding: 10px;
-  padding-bottom: 9px;
-  padding-top: 12px;
+  padding: 8px;
+  padding-bottom: 7px;
+  padding-top: 10px;
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
 }
 ul.autotab li.active,
 ul.autotab li:hover {
-  border-bottom: 4px solid #444;
+  border-bottom: 2px solid #444;
 }
