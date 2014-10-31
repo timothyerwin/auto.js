@@ -1,3 +1,10 @@
+.no-select
+  user-select none
+  -o-user-select none
+  -moz-user-select none
+  -khtml-user-select none
+  -webkit-user-select none
+
 div.automodal
   display none
   background rgba(0,0,0,.85)
@@ -23,6 +30,9 @@ div.automodal
     border-top-left-radius 7px
     border-top-right-radius 7px
 
+  .move
+    cursor move
+
   .footer
     padding 15px
     color #333
@@ -35,7 +45,6 @@ div.automodal
     font-family arial
     color #aaa
 
-
   .wrapper
-    border 1px solid #333
+    position absolute
     box-shadow 0 0 20px rgba(0,0,0,.5)

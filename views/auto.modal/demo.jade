@@ -8,6 +8,7 @@ block sub
   br
   br
   input#activate(type='button', value="Show Modal")
+  div(style='height:0px;')
   script.
     $("#activate").on("click", function(){
 
@@ -16,5 +17,5 @@ block sub
 
       $("#modal-content").automodal({title:"YouTube - Katy Perry", close: function(){
           $("#ut").attr('src','');
-        }});
+        }, canMove: true});
     });

@@ -798,7 +798,7 @@ var auto = auto || {};
 
     modal.addClass("automodal");
 
-    modal.html("<div class='box'><div class='wrapper'><div class='header'><span></span><b class='close'>x</b></div><div class='content'></div><div></div>");
+    modal.html("<div class='box'><div class='wrapper'><div class='header no-select'><span></span><b class='close'>x</b></div><div class='content'></div><div></div>");
 
     $("body").append(modal);
 
@@ -808,6 +808,38 @@ var auto = auto || {};
       if (o.close)
         o.close();
     };
+
+    var wrapper = modal.find('.wrapper'),
+      move = {
+        initialX: 0,
+        initialY: 0,
+        enabled: false
+      };
+
+    if (o.canMove) {
+      var header = modal.find('.header');
+
+      header.addClass('move').on('mousedown', function(e) {
+        move.enabled = true;
+
+        var ev = e.originalEvent;
+
+        move.initialX = ev.offsetX || ev.layerX;
+        move.initialY = ev.offsetY || ev.layerY;
+      });
+
+      $('body').on('mousemove', function(e) {
+        if (move.enabled) {
+          var ev = e.originalEvent;
+
+          wrapper
+            .css('top', ev.pageY - move.initialY)
+            .css('left', ev.pageX - move.initialX);
+        }
+      }).on('mouseup', function() {
+        move.enabled = false;
+      });
+    }
 
     modal.on("click", hide);
     modal.find(".close").on("click", hide);
@@ -851,7 +883,11 @@ var auto = auto || {};
         this.modal = this.modal || create(this, o);
         this.modal.settings = o;
         this.modal.find(".header span").text(o.title || 'D');
-        this.modal.show().find(".wrapper").center();
+        var wrapper = this.modal.show().find(".wrapper");
+
+        wrapper
+          .css('top', 'calc(50% - ' + wrapper.height() + 'px /2)')
+          .css('left', 'calc(50% - ' + wrapper.width() + 'px /2)');
       }
     });
   };
