@@ -190,7 +190,7 @@ div.automodal .wrapper {
 
 div.popover {
   display: none;
-  background: #fff;
+  background: rgba(255,255,255,0.98);
   border: 1px solid #d0d0d0;
   -webkit-box-shadow: 1px 1px 13px rgba(0,0,0,0.2);
   box-shadow: 1px 1px 13px rgba(0,0,0,0.2);
@@ -199,14 +199,12 @@ div.popover {
   z-index: 99;
   position: absolute;
   cursor: default;
-  border-radius: 4px;
 }
 div.popover.square {
   border-radius: 0;
 }
 .arrow-top {
   position: relative;
-  background: #fff;
   border: 1px solid #ccc;
 }
 .arrow-top:after,
@@ -244,7 +242,6 @@ div.popover.square {
 }
 .arrow-bottom {
   position: relative;
-  background: #fff;
   border: 1px solid #ccc;
 }
 .arrow-bottom:after,
@@ -281,7 +278,6 @@ div.popover.square {
 }
 .arrow-left {
   position: relative;
-  background: #fff;
   border: 1px solid #ccc;
 }
 .arrow-left:after,
@@ -319,7 +315,6 @@ div.popover.square {
 }
 .arrow-right {
   position: relative;
-  background: #fff;
   border: 1px solid #ccc;
 }
 .arrow-right:after,
