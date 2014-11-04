@@ -1548,6 +1548,8 @@ var auto = auto || {};
 
       activator.on('touchstart', cancelEvent);
 
+      $(window).on('resize', position);
+
       activator.on(o.trigger, function(e) {
         cancelEvent(e);
 
