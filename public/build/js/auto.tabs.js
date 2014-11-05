@@ -17,7 +17,7 @@ var auto = auto || {};
 
           a.parent().removeClass("active");
 
-          tab.css('display','none');
+          tab.hide();
 
           if (o && o.hide)
             o.hide(id);
@@ -32,20 +32,27 @@ var auto = auto || {};
 
         a.parent().addClass("active");
 
-        tab.css('display','block');
+        if(o && o.beforeShow){
+          o.beforeShow(id, tab);
+        }
 
-        if (o && o.show)
-          o.show(id);
+        if(o && o.effect === 'fade'){
+          tab.fadeIn();
+        }else{
+          tab.show();
+        }
+
+        if (o && o.show){
+          o.show(id, tab);
+        }
       };
 
       if (typeof o === 'string') {
-
         if (o === 'show') {
           var a = $('li a[data-tab="' + t + '"]');
 
           showtab(a);
         }
-
       }
 
       $.each(tabs.find("li a"), function() {
@@ -57,7 +64,6 @@ var auto = auto || {};
       });
 
       $(tabs.find(".active a").data("tab")).show();
-
     });
   };
 
