@@ -55,7 +55,7 @@ tr.arow:nth-child(odd) {
   background-color: #f7f7f7;
 }
 tr.arow.highlight {
-  background-color: #f1ffc3;
+  background-color: #fcff83;
 }
 div.pager {
   display: none;
