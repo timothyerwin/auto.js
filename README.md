@@ -51,7 +51,7 @@ The grid is very functional, but some things are missing...
 * Editing, Filtering, and Theming examples
 * Events (rowClick, cellClick, rowHover, cellHover, etc)  
 * Page Size Menu (Simple enough to wire a dropdown control to `grid.settings.pageSize`)  
-* Documentation (Currently the demo code functions as documentation)  
+* Documentation (Currently the gists function as documentation)  
 
 ###Start
 `node server.js`
