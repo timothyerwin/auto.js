@@ -25,23 +25,25 @@ block content
       li
         a(data-tab='#sorting') Sorting
 
-    mixin tab(name, jsfiddle)
+    mixin tab(name, jsfiddle, gist)
       div.tab(id='#{name}')
         block
         div(id='autogrid-#{name}')
         script(src="/local/js/auto.grid/demo.#{name}.js")
+        div(style='margin-top:20px')
+          script(src='https://gist.github.com/timothyerwin/#{gist}.js')
         div(style='margin: 15px 0')
           a(target="_blank" href='http://jsfiddle.net/timothyerwin/#{jsfiddle}/') jsfiddle.net
-
+          
     div.autotab(style='margin-top:10px')
-      +tab('simple', 'UZmLu')
-      +tab('images', '2ZxpM')
-      +tab('render', 'DMCuw')
-      +tab('action', 'qy7Hf')
-      +tab('select', '2MnKK')
-      +tab('expand', 'TR4qK')
-      +tab('sorting', 'YHT7c')
-      +tab('paging', 'g9hkq')
+      +tab('simple', 'UZmLu', '2750f39dbd8e294c4ac1')
+      +tab('images', '2ZxpM', '7590bff29a365250f694')
+      +tab('render', 'DMCuw', 'afa3f5d47ce81fe41821')
+      +tab('action', 'qy7Hf', '8203dbdadf7543009df2')
+      +tab('select', '2MnKK', '29207b2f7a1cfab9518c')
+      +tab('expand', 'TR4qK', 'c08f9d019f10434c30b8')
+      +tab('sorting', 'YHT7c', '861cdc1790427b17f488')
+      +tab('paging', 'g9hkq', 'dc5960af3a6ad37c7be0')
         script(src="/moment.js/moment.min.js")
         input(type='button', value='Basic' style='margin-right:10px;width:120px')#pager-basic.square
         input(type='button', value='Infinite', style='width:120px')#pager-infinite.square

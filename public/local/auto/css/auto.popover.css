@@ -4,7 +4,6 @@ div.popover {
   border: 1px solid #d0d0d0;
   box-shadow: 1px 1px 13px rgba(0,0,0,0.2);
   font-size: 1em;
-  min-width: 150px;
   z-index: 99;
   position: absolute;
   cursor: default;

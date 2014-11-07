@@ -1,5 +1,7 @@
 extends demo.layout
 
+block gist
+  script(src='https://gist.github.com/timothyerwin/c1d46c37e76f911caf22.js')
 block sub
   div#modal-content(style='display:none;')
     iframe#ut(width='560', height='315', src='', frameborder='0', allowfullscreen='')
@@ -8,7 +10,6 @@ block sub
   br
   br
   input#activate(type='button', value="Show Modal")
-  div(style='height:0px;')
   script.
     $("#activate").on("click", function(){
 
@@ -19,3 +20,5 @@ block sub
           $("#ut").attr('src','');
         }, canMove: true});
     });
+
+  

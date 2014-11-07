@@ -1,5 +1,8 @@
 extends demo.layout
 
+block gist
+  script(src="https://gist.github.com/timothyerwin/28d99fb80d5fd0085c93.js")
+  
 block sub
   style.
     input[type=button]{
@@ -32,7 +35,7 @@ block sub
           a Nothing
 
   br
-  div.dropdown(style='margin:50px 0')
+  div.dropdown
     ul
       li
         a(href='http://en.wikipedia.org/wiki/Japan', target='blank') Japan
