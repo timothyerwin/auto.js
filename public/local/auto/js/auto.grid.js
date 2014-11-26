@@ -18,7 +18,6 @@ auto.grid = function(settings) {
   if (!$(settings.target).is("div"))
     throw "settings.target must be a div element";
 
-
   this.stateplayer = new auto.grid.stateplayer();
   this.settings = $.extend(settings || {}, {
     pageSize: 20
