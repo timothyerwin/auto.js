@@ -6,8 +6,14 @@ var auto = auto || {};
     $(".dropdown ul:visible").hide();
   };
 
-  $("body").on('click touchstart', function() {
-    hideAll();
+  var init = function(){
+    $("body").on('click touchstart', function() {
+      hideAll();
+    });
+  };
+
+  $(document).on('ready', function(){
+    init();
   });
 
   var cancelEvent = function(e) {

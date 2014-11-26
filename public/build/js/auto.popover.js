@@ -533,9 +533,15 @@ var auto = auto || {};
     $(".popover:visible").hide();
   };
 
-  $("body").on('click touchstart', function(e) {
-    if (!e.target.popover)
-      hideAll();
+  var init = function(){
+    $("body").on('click touchstart', function(e) {
+      if (!e.target.popover)
+        hideAll();
+      });
+  };
+
+  $(document).on('ready', function(){
+      init();
   });
 
   var cancelEvent = function(e) {

@@ -27,8 +27,14 @@ var auto = auto || {};
     $(".dropdown ul:visible").hide();
   };
 
-  $("body").on('click touchstart', function() {
-    hideAll();
+  var init = function(){
+    $("body").on('click touchstart', function() {
+      hideAll();
+    });
+  };
+
+  $(document).on('ready', function(){
+    init();
   });
 
   var cancelEvent = function(e) {
@@ -81,7 +87,6 @@ auto.grid = function(settings) {
 
   if (!$(settings.target).is("div"))
     throw "settings.target must be a div element";
-
 
   this.stateplayer = new auto.grid.stateplayer();
   this.settings = $.extend(settings || {}, {
@@ -1429,9 +1434,15 @@ var auto = auto || {};
     $(".popover:visible").hide();
   };
 
-  $("body").on('click touchstart', function(e) {
-    if (!e.target.popover)
-      hideAll();
+  var init = function(){
+    $("body").on('click touchstart', function(e) {
+      if (!e.target.popover)
+        hideAll();
+      });
+  };
+
+  $(document).on('ready', function(){
+      init();
   });
 
   var cancelEvent = function(e) {
