@@ -641,8 +641,6 @@ var auto = auto || {};
       };
 
       if (typeof(o) === 'string') {
-        position();
-
         if (o === 'show') {
           popover.show();
         } else if (o === 'hide') {
@@ -650,6 +648,8 @@ var auto = auto || {};
         } else if (o === 'toggle') {
           popover.toggle();
         }
+
+        position();
 
         return;
       }
@@ -668,9 +668,9 @@ var auto = auto || {};
         if(active.length === 1 && popover[0] != active[0])
           hideAll();
 
-        position();
-
         popover.toggle();
+
+        position();
       });
 
     });
