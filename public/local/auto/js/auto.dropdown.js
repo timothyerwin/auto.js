@@ -38,9 +38,12 @@ var auto = auto || {};
 
         cancelEvent(e);
 
-        hideAll();
-
-        menu.toggle();
+        if ($(this).parent().find('ul').is(':visible')) {
+          hideAll();
+        } else {
+          hideAll();
+          menu.toggle();
+        }
       });
     });
   };
