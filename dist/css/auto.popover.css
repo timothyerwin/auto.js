@@ -2,8 +2,8 @@
   display: none;
   background: #fff;
   border: 1px solid #ddd;
-  -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
   font-size: 1em;
   z-index: 99;
   position: absolute;
@@ -14,7 +14,6 @@
 }
 .arrow-top {
   position: relative;
-  border: 1px solid #ccc;
 }
 .arrow-top:after,
 .arrow-top:before {
@@ -45,13 +44,12 @@
   margin-left: -11px;
 }
 .arrow-top:before {
-  border-bottom-color: #bbb;
+  border-bottom-color: #d0d0d0;
   border-width: 12px;
   margin-left: -12px;
 }
 .arrow-bottom {
   position: relative;
-  border: 1px solid #ccc;
 }
 .arrow-bottom:after,
 .arrow-bottom:before {
@@ -81,13 +79,12 @@
   border-width: 11px;
 }
 .arrow-bottom:before {
-  border-top-color: #bbb;
+  border-top-color: #d0d0d0;
   border-width: 12px;
   margin-left: -1px;
 }
 .arrow-left {
   position: relative;
-  border: 1px solid #ccc;
 }
 .arrow-left:after,
 .arrow-left:before {
@@ -118,13 +115,12 @@
   margin-top: -12px;
 }
 .arrow-left:before {
-  border-right-color: #bbb;
+  border-right-color: #d0d0d0;
   border-width: 12px;
   margin-top: -13px;
 }
 .arrow-right {
   position: relative;
-  border: 1px solid #ccc;
 }
 .arrow-right:after,
 .arrow-right:before {
@@ -155,7 +151,7 @@
   margin-top: -12px;
 }
 .arrow-right:before {
-  border-left-color: #bbb;
+  border-left-color: #d0d0d0;
   border-width: 12px;
   margin-top: -13px;
 }
