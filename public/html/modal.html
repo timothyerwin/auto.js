@@ -1,0 +1,20 @@
+<h1>modal</h1>
+<br/>
+<div id="modal-content" style="display:none;">
+  <iframe id="ut" width="100%" height="100%" style='max-height:310px' src="" frameborder="0" allowfullscreen=""></iframe>
+  <div class="footer">
+    <input type="button" value="Close" onclick="$('#modal-content').automodal('hide')"/>
+  </div>
+</div>
+<input id="activate" type="button" value="Show Modal"/>
+<script>
+  $("#activate").on("click", function(){
+
+    if($("#ut").attr("src") == '')
+      $("#ut").attr("src", '//www.youtube.com/embed/0KSOMA3QBU0?start=40&autoplay=1');
+
+    $("#modal-content").automodal({title:"YouTube - Katy Perry", close: function(){
+        $("#ut").attr('src','');
+      }, canMove: true});
+  });
+</script>

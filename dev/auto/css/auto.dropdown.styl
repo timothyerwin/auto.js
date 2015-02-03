@@ -1,0 +1,31 @@
+
+.dropdown
+  position relative
+  display inline-block;
+
+  ul
+    margin-top -1px
+    display none
+    list-style-type none
+    background #fff
+    border 1px solid #d0d0d0
+    box-shadow 1px 1px 10px rgba(#0, .15)
+    z-index 99
+    position absolute
+
+    li
+      border-bottom 1px solid #eee
+
+      &:last-child
+        border-bottom none
+
+      &:hover
+        background #39f
+
+      &:hover a
+        color white
+
+      a
+        display block
+        padding 1rem 2rem
+        cursor pointer

@@ -1,0 +1,143 @@
+.popover
+  display none
+  background #fff
+  border 1px solid #ddd
+  box-shadow 1px 1px 10px rgba(#0, .1)
+  font-size 1em
+  z-index 99
+  position absolute
+  cursor default
+
+  &.square
+    border-radius: 0
+
+.arrow-top
+
+  &:after,&:before
+    bottom 100%
+    left 30px
+    border solid transparent
+    content " "
+    height 0
+    width 0
+    position absolute
+    pointer-events none
+
+  &.center:after, &.center:before
+    left 47%
+
+  &.right:after
+    left auto
+    right 30px
+
+  &.right:before
+    left auto
+    right 29px
+
+  &:after
+    border-bottom-color #fff
+    border-width 11px
+    margin-left -11px
+
+  &:before
+    border-bottom-color #d0d0d0
+    border-width 12px
+    margin-left -12px
+
+.arrow-bottom
+
+  &:after, &:before
+    top 100%
+    left 30px
+    border solid transparent
+    content " "
+    height 0
+    width 0
+    position absolute
+    pointer-events none
+
+  &.center:after, &.center:before
+    left 47%
+
+  &.right:after
+    left auto
+    right 30px
+
+  &.right:before
+    left auto
+    right 29px
+
+  &:after
+    border-top-color #fff
+    border-width 11px
+
+  &:before
+    border-top-color #d0d0d0
+    border-width 12px
+    margin-left -1px
+
+.arrow-left
+
+  &:after, &:before
+    right 100%
+    top 30px
+    border solid transparent
+    content " "
+    height 0
+    width 0
+    position absolute
+    pointer-events none
+
+  &.center:after, &.center:before
+    top 50%
+
+  &.bottom:after
+    top auto
+    bottom 18px
+
+  &.bottom:before
+    top auto
+    bottom 17px
+
+  &:after
+    border-right-color #fff
+    border-width 11px
+    margin-top -12px
+
+  &:before
+    border-right-color #d0d0d0
+    border-width 12px
+    margin-top -13px
+
+.arrow-right
+
+  &:after,&:before
+    left 100%
+    top 30px
+    border solid transparent
+    content " "
+    height 0
+    width 0
+    position absolute
+    pointer-events none
+
+  &.center:after, &.center:before
+    top 50%
+
+  &.bottom:after
+    top auto
+    bottom 18px
+
+  &.bottom:before
+    top auto
+    bottom 17px
+
+  &:after
+    border-left-color #fff
+    border-width 11px
+    margin-top -12px
+
+  &:before
+    border-left-color #d0d0d0
+    border-width 12px
+    margin-top -13px

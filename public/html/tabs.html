@@ -1,0 +1,25 @@
+<ul id="demotabs" class="autotab">
+  <li class="active"><a data-tab="#enya">Enya</a></li>
+  <li><a data-tab="#beyonce">Beyonce</a></li>
+  <li><a data-tab="#katyperry">Katy Perry</a></li>
+</ul>
+<div style="background:#fff;padding:10px;border:1px solid #ddd;margin-top:10px" class="autotab">
+  <div id="enya" class="tab">
+    <iframe width="100%" height="400" src="//www.youtube.com/embed/7wfYIMyS_dI" frameborder="0" allowfullscreen=""></iframe>
+  </div>
+  <div id="beyonce" class="tab">
+    <iframe width="100%" height="400" src="//www.youtube.com/embed/JlxByc0-V40" frameborder="0" allowfullscreen=""></iframe>
+  </div>
+  <div id="katyperry" class="tab">
+    <iframe width="100%" height="400" src="//www.youtube.com/embed/0KSOMA3QBU0" frameborder="0" allowfullscreen=""></iframe>
+  </div>
+</div>
+<script>
+  $("#demotabs").autotabs({
+    show: function(tab){
+      console.log("show=", tab);
+    },
+    hide: function(tab){
+      console.log("hide=", tab)
+      }});
+</script>

@@ -1,0 +1,48 @@
+.popmenu
+  display none
+  min-width 18rem
+  background #fff
+  user-select none
+  -o-user-select none
+  -moz-user-select none
+  -khtml-user-select none
+  -webkit-user-select none
+  text-transform uppercase
+
+  .disabled
+    pointer-events none
+    opacity .65
+
+  ul
+    display none
+    transition all 2s
+    list-style-type none
+    text-align left
+    padding 0
+    margin 0
+
+    li
+      border-bottom 1px solid #ddd
+
+    li:last-child
+      border-bottom 0
+
+    li a
+      padding 16px 20px
+      text-transform uppercase
+      display block
+      color #555
+
+      i
+        color #ccc
+        position relative
+        top 2px
+
+      &.back
+        text-align right
+        color #888
+
+      &:not(.no-highlight):hover
+        background #09c
+        color #fff
+        cursor pointer

@@ -1,0 +1,49 @@
+<h1>popmenu</h1>
+<br/>
+<nav class="popmenu">
+  <ul>
+    <li><a data-menu='#us'>United States<i class='fa fa-chevron-right pull-right'></i></a></li>
+    <li><a data-menu='#brazil'>Brazil<i class='fa fa-chevron-right pull-right'></i></a></li>
+    <li><a data-menu='#mexico'>Mexico<i class='fa fa-chevron-right pull-right'></i></a></li>
+  </ul>
+  <ul id='us'>
+    <li>
+      <a>Alabama</a>
+    </li>
+    <li>
+      <a>Florida</a>
+    </li>
+    <li>
+      <a>Georgia</a>
+    </li>
+  </ul>
+  <ul id='brazil'>
+    <li>
+      <a>Rio de Janeiro</a>
+    </li>
+    <li>
+      <a>Manaus</a>
+    </li>
+    <li>
+      <a>Florianopolis</a>
+    </li>
+  </ul>
+  <ul id='mexico'>
+    <li>
+      <a>Tijuana</a>
+    </li>
+    <li>
+      <a>Mexico City</a>
+    </li>
+    <li>
+      <a>Cuidad Juarez</a>
+    </li>
+  </ul>
+</nav>
+<input id='activate' type='button' value='activate' />
+<script>
+  $('#activate').autopopmenu({
+      menu: $(".popmenu"),
+      position: 'bottom left'
+    });
+</script>

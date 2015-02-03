@@ -1,0 +1,29 @@
+.autostrip ul {
+  border: 1px solid #aaa;
+  display: inline-block;
+  list-style-type: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  outline: 1px solid #fff;
+  margin: 15px 0;
+}
+.autostrip ul li {
+  display: inline;
+}
+.autostrip ul li a {
+  color: #777;
+  color: #5cba1d;
+  display: inline-block;
+  font-weight: bold;
+  padding: 7px 20px;
+  text-transform: lowercase;
+  text-decoration: none;
+  border-right: 1px solid #ddd;
+  cursor: pointer;
+}
+.autostrip ul li:last-child a {
+  border-right: none;
+}
+.autostrip ul li a:hover {
+  text-decoration: underline;
+}

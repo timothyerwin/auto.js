@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='app' content='auto.js' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>auto.js</title>
+    <meta name='description' content='' />
+
+    <link rel='stylesheet' href='/bower/normalize-css/normalize.css'>
+    <link rel='stylesheet' href='/bower/fontawesome/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu:400,500"/>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Josefin+Sans:400,600"/>
+
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.js'></script>
+
+    <script src='/bower/momentjs/moment.js'></script>
+    <script src='/bower/page/page.js'></script>
+    <script src='/bower/riotjs/riot.js'></script>
+
+    <link rel='stylesheet' href='/autojs/auto.all.css' />
+    <script src='/autojs/auto.all.js'></script>
+
+    <link rel='stylesheet' href='/css/site.css' />
+    <script src='/js/site.js'></script>
+  </head>
+  <body>
+    <div id="content">
+      <aside>
+        <div id="logo"><a href="/">auto.js</a><span id="version"></span></div>
+        <ul>
+          <li><a data-nav='grid' href="/grid">Grid<i class='fa fa-chevron-right pull-right'></i></a></li>
+          <li><a data-nav='modal' href="/modal">Modal<i class='fa fa-chevron-right pull-right'></i></a></li>
+          <li><a data-nav='tabs' href="/tabs">Tabs<i class='fa fa-chevron-right pull-right'></i></a></li>
+          <li><a data-nav='dropdown' href="/dropdown">Dropdown<i class='fa fa-chevron-right pull-right'></i></a></li>
+          <li><a data-nav='popover' href="/popover">Popover<i class='fa fa-chevron-right pull-right'></i></a></li>
+          <li><a data-nav='popmenu' href="/popmenu">Popmenu<i class='fa fa-chevron-right pull-right'></i></a></li>
+          <li><a data-nav='download' href="/download">Download<i class='fa fa-chevron-right pull-right'></i></a></li>
+          <li><a data-nav='license' href="/license">License<i class='fa fa-chevron-right pull-right'></i></a></li>
+          <li><a data-nav='faq' href="/faq">FAQ<i class='fa fa-chevron-right pull-right'></i></a></li>
+        </ul>
+      </aside>
+      <article>
+        <i id="toggle-nav" class="fa fa-bars"></i>
+        <div id="pages" class="content">
+        </div>
+        <footer>
+          <section id="disqus" class="content">
+              <div id="disqus_thread"></div>
+          </section>
+        </footer>
+      </article>
+    </div>
+  </body>
+</html>

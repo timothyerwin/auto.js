@@ -10,22 +10,39 @@ var jshint = require('gulp-jshint');
 var bump = require('gulp-bump');
 var shell = require('gulp-shell');
 var rimraf = require('rimraf');
+var nodemon = require('gulp-nodemon');
+var jeet = require('jeet');
+var rupture = require('rupture');
+var nib = require('nib');
 
 var dest = {
-  build: "public/build",
+  build: "public/autojs",
   download: "public/zip"
 };
 
-gulp.task('clean', function() {
+gulp.task('clean', function () {
   gulp.src(dest.build, {
-    read: false
-  })
-  .pipe(clean());
+      read: false
+    })
+    .pipe(clean());
 });
 
-gulp.task('css', function() {
-  gulp.src('public/local/auto/**/*.styl')
-    .pipe(stylus())
+gulp.task('css', function () {
+  gulp.src('public/**/*.styl', {
+    base: './'
+  })
+    .pipe(stylus({
+      use: [nib(), jeet(), rupture()]
+    }))
+    .pipe(autoprefixer("> 1%", "last 2 version"))
+    .pipe(gulp.dest('./'))
+});
+
+gulp.task('auto', function () {
+  gulp.src('dev/auto/**/*.styl')
+    .pipe(stylus({
+      use: [nib(), jeet(), rupture()]
+    }))
     .pipe(autoprefixer("> 1%", "last 2 version"))
     .pipe(gulp.dest(dest.build))
     .pipe(concat('auto.all.css'))
@@ -36,17 +53,17 @@ gulp.task('css', function() {
     .pipe(minifycss())
     .pipe(gulp.dest(dest.build));
 
-  gulp.src('public/local/auto/**/*.styl')
-    .pipe(stylus())
+  gulp.src('dev/auto/**/*.styl')
+    .pipe(stylus({
+      use: [nib(), jeet(), rupture()]
+    }))
     .pipe(rename({
       suffix: '.min'
     }))
     .pipe(minifycss())
     .pipe(gulp.dest(dest.build));
-});
 
-gulp.task('js', function() {
-  gulp.src('public/local/auto/**/*.js')
+  gulp.src('dev/auto/**/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
     .pipe(gulp.dest(dest.build))
@@ -58,7 +75,7 @@ gulp.task('js', function() {
     .pipe(uglify())
     .pipe(gulp.dest(dest.build));
 
-  gulp.src('public/local/auto/**/*.js')
+  gulp.src('dev/auto/**/*.js')
     .pipe(rename({
       suffix: '.min'
     }))
@@ -66,7 +83,7 @@ gulp.task('js', function() {
     .pipe(gulp.dest(dest.build));
 });
 
-gulp.task('bump', function() {
+gulp.task('bump', function () {
   gulp.src('./package.json')
     .pipe(bump())
     .pipe(gulp.dest('./'));
@@ -76,7 +93,7 @@ gulp.task('bump', function() {
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('tag', function() {
+gulp.task('tag', function () {
   var pkg = require('./package.json');
   var v = pkg.version;
   var message = v;
@@ -91,24 +108,40 @@ gulp.task('tag', function() {
     ]));
 });
 
-gulp.task('zip', function() {
+gulp.task('zip', function () {
   var zip = require('gulp-zip');
 
   var pkg = require('./package.json');
 
   gulp.src(dest.build + '/**')
-    .pipe(zip('auto.js-' + pkg.version + '.zip'))
+    .pipe(zip('auto.js.zip'))
     .pipe(gulp.dest(dest.download));
 });
 
-gulp.task('build', ['bump', 'css', 'js']);
+gulp.task('build', ['bump', 'auto']);
 
-gulp.task('drop-dist', function(cb){
+gulp.task('drop-dist', function (cb) {
   rimraf('./dist', cb);
 });
 
-gulp.task('bower', ['drop-dist'], function() {
+gulp.task('bower', ['drop-dist'], function () {
   gulp.src(dest.build + "/**/*.*", {
     base: './public/build'
   }).pipe(gulp.dest('./dist'));
 });
+
+gulp.task('lint', function () {
+  gulp.src('./**/*.js')
+    .pipe(jshint())
+});
+
+gulp.task('default', ['auto', 'css'], function () {
+
+  gulp.watch('dev/**/*.*', ['auto']);
+  gulp.watch('public/**/*.styl', ['css']);
+
+  nodemon({
+    script: 'server.js',
+    ignore: ["public/*", "node_modules/*", ".git/*", "dev/*"]
+  }).on('change', ['lint'])
+})

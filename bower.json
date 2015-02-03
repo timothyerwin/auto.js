@@ -1,6 +1,6 @@
 {
   "name": "auto.js",
-  "version": "0.3.6",
+  "version": "0.3.17",
   "authors": [
     "Tim Erwin <tim.erwin@gmail.com>"
   ],
@@ -17,7 +17,15 @@
   "homepage": "autojs.azurewebsites.net",
   "main": "dist",
   "dependencies": {
-    "jquery": ">=1.9.0"
+    "jquery": ">=1.9.0",
+    "page": "visionmedia/page.js#~1.6.0",
+    "fontawesome": "~4.3.0",
+    "momentjs": "~2.9.0",
+    "riotjs": "~2.0.7",
+    "normalize-css": "~3.0.2",
+    "enquire": "~2.1.2",
+    "fastclick": "~1.0.6",
+    "Touchy": "*"
   },
   "ignore": [
     "**/.*",

@@ -1,0 +1,179 @@
+﻿*
+  margin 0
+  padding 0
+
+:focus
+  outline 0
+
+html, body
+  font-size 12px
+  font-family "Helvetica Neue",Helvetica,Arial,sans-serif
+  color #333
+  height 100%
+  width 100%
+
+.clearfix:after
+  visibility hidden
+  display block
+  font-size 0
+  content " "
+  clear both
+  height 0
+
+.clearfix
+  display: inline-block
+* html .clearfix
+  height 1%
+.clearfix
+  display block
+
+a
+  color #09c
+  text-decoration none
+
+a.button
+  display inline-block
+  background #fff
+  border 1px solid #ddd
+  color #555
+  padding 1rem 4rem
+  text-transform uppercase
+  text-align center
+
+a.buttonactive, a.button.active
+  box-shadow inset 0 0 7px rgba(0,0,0,.2)
+
+a.buttonhover
+  box-shadow 1px 1px 8px rgba(0,0,0,.2)
+  color #09c
+
+input[type=button]
+  -webkit-appearance none
+  padding 10px 30px
+  background #fff
+  color #555
+  border 1px solid #ccc
+  font-size 1rem
+  text-transform uppercase
+  box-shadow 1px 1px 7px rgba(0,0,0,.15)
+  border-radius 5px
+
+  &.square
+    border-radius 0
+
+  &:hover, &.active
+    box-shadow 1px 1px 7px rgba(0,0,0,.2)
+    color #5CBA1D
+    cursor pointer
+
+  &:active
+    box-shadow none
+    border 1px solid #ddd
+
+h1
+  font-size 3em
+  font-weight bold
+  color #505050
+  font-family josefin sans
+  margin 0
+
+h2
+  color #777
+  margin 10px 0
+
+.gray
+  color #ccc
+
+.blue
+  color #09c
+
+.hotpink
+  color #FD156D
+
+.theme
+  color #5CBA1D
+
+.upper
+  text-transform uppercase
+
+#content
+  overflow-x hidden
+
+  > aside
+    top 0
+    left 0
+    width 21rem
+    height 100%
+    position fixed
+    min-height 100%
+    background #09c
+
+    +below(2)
+      display none
+
+    ul
+      li
+        a
+          display block
+          text-transform uppercase
+          color #fff
+          padding 15px 25px
+          border-bottom 1px solid rgba(255,255,255,.15)
+
+        &:first-child
+          border-top 1px solid rgba(255,255,255,.15)
+
+        i
+          opacity .3
+
+  > article
+    position relative
+    background #fff
+    padding 50px
+    margin-left 21rem
+
+    +below(2)
+      padding 20px
+      margin-left 0
+
+    section
+      max-width 700px
+      margin 50px 0
+
+      h1
+        margin-bottom 30px
+
+#logo
+  font-size 2.5rem
+  font-weight bold
+  padding 30px
+  text-align center
+
+  a
+    color #fff
+
+#toggle-nav
+  position absolute
+  top 2rem
+  left 2rem
+  z-index 1
+  opacity .65
+  padding 1rem 1.5rem
+  font-size 2.5rem
+  color #555
+  cursor pointer
+  transition 1s opacity
+
+  +below(2)
+    top 0
+    left 0
+
+  &:hover
+    opacity 1
+
+
+.card
+  background #fff
+  padding 50px
+  border 1px solid #ddd
+  box-shadow 0 0 8px rgba(0,0,0,.1)

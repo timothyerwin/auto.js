@@ -1,0 +1,51 @@
+.popmenu {
+  display: none;
+  min-width: 18rem;
+  background: #fff;
+  -ms-user-select: none;
+  user-select: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  text-transform: uppercase;
+}
+.popmenu .disabled {
+  pointer-events: none;
+  opacity: 0.65;
+}
+.popmenu ul {
+  display: none;
+  -webkit-transition: all 2s;
+  transition: all 2s;
+  list-style-type: none;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+.popmenu ul li {
+  border-bottom: 1px solid #ddd;
+}
+.popmenu ul li:last-child {
+  border-bottom: 0;
+}
+.popmenu ul li a {
+  padding: 16px 20px;
+  text-transform: uppercase;
+  display: block;
+  color: #555;
+}
+.popmenu ul li a i {
+  color: #ccc;
+  position: relative;
+  top: 2px;
+}
+.popmenu ul li a.back {
+  text-align: right;
+  color: #888;
+}
+.popmenu ul li a:not(.no-highlight):hover {
+  background: #09c;
+  color: #fff;
+  cursor: pointer;
+}
