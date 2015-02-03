@@ -120,6 +120,14 @@ h2 {
 }
 @media only screen and (max-width: 600px) {
   #content > aside {
+    width: 100%;
+    height: auto;
+    min-height: initial;
+    z-index: 1;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #content > aside ul {
     display: none;
   }
 }
@@ -137,20 +145,27 @@ h2 {
   opacity: 0.3;
 }
 #content > article {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   position: relative;
   background: #fff;
   padding: 50px;
   margin-left: 21rem;
+  min-height: 100%;
 }
 @media only screen and (max-width: 600px) {
   #content > article {
+    margin-top: 140px;
     padding: 20px;
     margin-left: 0;
   }
 }
 #content > article section {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   max-width: 700px;
-  margin: 50px 0;
 }
 #content > article section h1 {
   margin-bottom: 30px;
@@ -158,29 +173,28 @@ h2 {
 #logo {
   font-size: 2.5rem;
   font-weight: bold;
-  padding: 30px;
+  padding: 35px;
   text-align: center;
 }
 #logo a {
   color: #fff;
 }
 #toggle-nav {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
+  display: none;
+  position: relative;
+  top: -8px;
   z-index: 1;
   opacity: 0.65;
   padding: 1rem 1.5rem;
   font-size: 2.5rem;
-  color: #555;
+  color: #fff;
   cursor: pointer;
   -webkit-transition: 1s opacity;
   transition: 1s opacity;
 }
 @media only screen and (max-width: 600px) {
   #toggle-nav {
-    top: 0;
-    left: 0;
+    display: inline-block;
   }
 }
 #toggle-nav:hover {

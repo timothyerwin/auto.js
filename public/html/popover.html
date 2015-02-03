@@ -11,9 +11,19 @@
   ul.popovers li{
     padding: 10px 0;
   }
+
+  #popovers{
+    text-align:center;
+    padding-bottom: 150px;
+  }
+
+  @media screen and (min-width: 800px){
+    #popovers{
+      text-align:left;
+    }
+  }
 </style><br/>
-<div class="clearfix">
-  <div style="float:left">
+<div id='popovers'>
     <ul class="popovers">
       <li>
         <input type="button" value="top left" id="button-top-left" class="square"/>
@@ -40,11 +50,6 @@
         </div>
       </li>
     </ul>
-  </div>
-  <div style="float:left;margin: 0 25px" class="or-spacer-vertical left">
-    <div style="height:300px" class="mask"></div>
-  </div>
-  <div style="float:left;text-align:center">
     <ul class="popovers">
       <li>
         <input type="button" value="top center" id="button-top-center" class="square"/>
@@ -71,11 +76,6 @@
         </div>
       </li>
     </ul>
-  </div>
-  <div style="float:left;margin: 0 25px" class="or-spacer-vertical left">
-    <div style="height:100px" class="mask"></div>
-  </div>
-  <div style="float:left">
     <ul class="popovers">
       <li>
         <input type="button" value="top right" id="button-top-right" class="square"/>
@@ -101,15 +101,14 @@
           <h1>popover</h1><br/><a href="http://google.com" target="blank">www.google.com</a>
         </div>
       </li>
+      <li>
+        <input type="button" value="manual" id="button-manual" class="square"/>
+        <div style="padding:20px" id="popover-manual" class="popover">
+          <h1>popover</h1><br/><a href="http://google.com" target="blank">www.google.com</a>
+        </div>
+      </li>
     </ul>
   </div>
-</div>
-<div>
-  <input type="button" value="manual" id="button-manual" class="square"/>
-  <div style="padding:20px" id="popover-manual" class="popover">
-    <h1>popover</h1><br/><a href="http://google.com" target="blank">www.google.com</a>
-  </div>
-</div>
 <script>
   var types = ["bottom left","top left","left top","right top",
   "left center", "right center", "left bottom", "right bottom",

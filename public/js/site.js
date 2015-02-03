@@ -1,18 +1,14 @@
+$.ajaxSetup({ cache: true });
+
 var site = (new function () {
   var self = riot.observable(this);
 
   self.init = function () {
 
     $('#toggle-nav').on('click', function(){
-      var aside = $('#content > aside'), article = $('#content > article');
+      var menu = $('#content > aside ul');
 
-      aside.toggle();
-
-      if(aside.is(':visible')){
-        article.css('margin-left', '21rem');
-      } else{
-        article.css('margin-left', '0');
-      }
+      menu.toggle();
     });
 
     return self;
@@ -63,7 +59,8 @@ site.routes = (new function () {
   }, {
     route: '/tabs',
     execute: 'tabs.html',
-    nav: 'tabs'
+    nav: 'tabs',
+    refresh: true
   }, {
     route: '/dropdown',
     execute: 'dropdown.html',
@@ -167,13 +164,13 @@ site.routes = (new function () {
   };
 
   self.init = function(){
-    navlinks = $('body > nav li a');
-
-    navlinks.on('click', function(e) {
-      e.preventDefault();
-
-      site.router.load($(this).attr('href'));
-    });
+     navlinks = $('#content aside ul li a');
+    //
+    // navlinks.on('click', function(e) {
+    //   e.preventDefault();
+    //
+    //   site.router.load($(this).attr('href'));
+    // });
 
   };
 
@@ -200,15 +197,17 @@ site.disqus = (new function () {
   };
 
   self.load = function () {
-    if(window.DISQUS){
-        DISQUS.reset({
-          reload: true,
-          config: function () {
-            this.page.identifier = document.location.pathname;
-            this.page.url = document.location.toString();
-          }
-        });
-    } else{
+
+    return;
+    // if(window.DISQUS){
+    //     DISQUS.reset({
+    //       reload: true,
+    //       config: function () {
+    //         this.page.identifier = document.location.pathname;
+    //         this.page.url = document.location.toString();
+    //       }
+    //     });
+    // } else{
       window.disqus_shortname = 'autojs';
       window.disqus_identifier = document.location.pathname;
       window.disqus_url = document.location.toString();
@@ -221,7 +220,7 @@ site.disqus = (new function () {
         (document.getElementsByTagName('head')[0] ||
           document.getElementsByTagName('body')[0]).appendChild(dsq);
       })();
-    }
+    //}
   };
 
   $(self.init);

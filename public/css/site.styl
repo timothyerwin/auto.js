@@ -109,9 +109,15 @@ h2
     background #09c
 
     +below(2)
-      display none
+      width 100%
+      height auto
+      min-height initial
+      z-index 1
 
     ul
+      +below(2)
+        display none
+
       li
         a
           display block
@@ -127,18 +133,21 @@ h2
           opacity .3
 
   > article
+    box-sizing border-box
     position relative
     background #fff
     padding 50px
     margin-left 21rem
+    min-height 100%
 
     +below(2)
+      margin-top 140px
       padding 20px
       margin-left 0
 
     section
+      box-sizing border-box
       max-width 700px
-      margin 50px 0
 
       h1
         margin-bottom 30px
@@ -146,27 +155,26 @@ h2
 #logo
   font-size 2.5rem
   font-weight bold
-  padding 30px
+  padding 35px
   text-align center
 
   a
     color #fff
 
 #toggle-nav
-  position absolute
-  top 2rem
-  left 2rem
+  display none
+  position relative
+  top -8px
   z-index 1
   opacity .65
   padding 1rem 1.5rem
   font-size 2.5rem
-  color #555
+  color #fff
   cursor pointer
   transition 1s opacity
 
   +below(2)
-    top 0
-    left 0
+    display inline-block
 
   &:hover
     opacity 1
