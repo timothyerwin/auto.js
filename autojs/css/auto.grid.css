@@ -43,6 +43,9 @@
 .autogrid td.action {
   cursor: pointer;
 }
+.autogrid td.action input[type=checkbox] {
+  cursor: pointer;
+}
 .autogrid table tr.header td {
   text-transform: uppercase;
   font-size: 1em;
