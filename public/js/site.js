@@ -197,17 +197,15 @@ site.disqus = (new function () {
   };
 
   self.load = function () {
-
-    return;
-    // if(window.DISQUS){
-    //     DISQUS.reset({
-    //       reload: true,
-    //       config: function () {
-    //         this.page.identifier = document.location.pathname;
-    //         this.page.url = document.location.toString();
-    //       }
-    //     });
-    // } else{
+    if(window.DISQUS){
+        DISQUS.reset({
+          reload: true,
+          config: function () {
+            this.page.identifier = document.location.pathname;
+            this.page.url = document.location.toString();
+          }
+        });
+    } else{
       window.disqus_shortname = 'autojs';
       window.disqus_identifier = document.location.pathname;
       window.disqus_url = document.location.toString();
@@ -220,7 +218,7 @@ site.disqus = (new function () {
         (document.getElementsByTagName('head')[0] ||
           document.getElementsByTagName('body')[0]).appendChild(dsq);
       })();
-    //}
+    }
   };
 
   $(self.init);

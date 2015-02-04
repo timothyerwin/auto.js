@@ -209,6 +209,9 @@ code {
 #toggle-nav:hover {
   opacity: 1;
 }
+#disqus {
+  padding-top: 50px;
+}
 .card {
   background: #fff;
   padding: 50px;
