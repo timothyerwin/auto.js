@@ -96,11 +96,12 @@ input[type=button]:active {
   border: 1px solid #ddd;
 }
 h1 {
-  font-size: 3em;
+  font-size: 4em;
   font-weight: bold;
-  color: #505050;
+  color: #555;
   font-family: josefin sans;
   margin: 0;
+  text-shadow: 0 0 1px rgba(0,0,0,0.2);
 }
 h2 {
   color: #666;
