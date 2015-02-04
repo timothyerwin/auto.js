@@ -193,20 +193,27 @@ code {
 #logo {
   font-size: 2.5rem;
   font-weight: bold;
-  padding: 35px;
+  padding: 45px;
   text-align: center;
+}
+@media only screen and (max-width: 600px) {
+  #logo {
+    text-align: left;
+    font-size: 4rem;
+    padding: 65px 25px;
+  }
 }
 #logo a {
   color: #fff;
 }
 #toggle-nav {
   display: none;
-  position: relative;
-  top: -8px;
+  position: absolute;
+  top: 65px;
   z-index: 1;
   opacity: 0.65;
   padding: 1rem 1.5rem;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   color: #fff;
   cursor: pointer;
   -webkit-transition: 1s opacity;
@@ -215,6 +222,7 @@ code {
 @media only screen and (max-width: 600px) {
   #toggle-nav {
     display: inline-block;
+    right: 10px;
   }
 }
 #toggle-nav:hover {

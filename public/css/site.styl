@@ -171,26 +171,32 @@ code
 #logo
   font-size 2.5rem
   font-weight bold
-  padding 35px
+  padding 45px
   text-align center
+
+  +below(2)
+    text-align left
+    font-size 4rem
+    padding 65px 25px
 
   a
     color #fff
 
 #toggle-nav
   display none
-  position relative
-  top -8px
+  position absolute
+  top 65px
   z-index 1
   opacity .65
   padding 1rem 1.5rem
-  font-size 2.5rem
+  font-size 3.5rem
   color #fff
   cursor pointer
   transition 1s opacity
 
   +below(2)
     display inline-block
+    right 10px
 
   &:hover
     opacity 1
