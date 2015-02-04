@@ -65,6 +65,13 @@ input[type=button] {
   box-shadow: 1px 1px 7px rgba(0,0,0,0.15);
   border-radius: 5px;
 }
+@media only screen and (max-width: 400px) {
+  input[type=button] {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 15px 30px;
+  }
+}
 input[type=button].square {
   border-radius: 0;
 }
@@ -88,8 +95,7 @@ h1 {
   margin: 0;
 }
 h2 {
-  color: #777;
-  margin: 10px 0;
+  color: #555;
 }
 .gray {
   color: #ccc;

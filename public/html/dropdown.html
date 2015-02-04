@@ -1,39 +1,52 @@
 <h1>dropdown</h1>
 <style>
-  input[type=button]{
+  input[type=button] {
     width: 150px;
   }
 </style>
-<div class="clearfix">
-  <div style="float:right" class="dropdown">
-    <input type="button" value="Right" class="square"/>
-    <ul style="right:0">
-      <li><a href="http://en.wikipedia.org/wiki/Japan" target="blank">Japan</a></li>
-      <li><a href="http://en.wikipedia.org/wiki/Netherlands" target="blank">Netherlands</a></li>
-      <li><a href="http://en.wikipedia.org/wiki/Brazil" target="blank">Brazil</a></li>
-      <li><a>Nothing</a></li>
-    </ul>
-  </div>
-  <div style="float:left" class="dropdown">
-    <input type="button" value="Left" class="square"/>
+<div>
+  <div class="dropdown">
+    <input type="button" value="Left" class="square" />
     <ul>
-      <li><a href="http://en.wikipedia.org/wiki/Japan" target="blank">Japan</a></li>
-      <li><a href="http://en.wikipedia.org/wiki/Netherlands" target="blank">Netherlands</a></li>
-      <li><a href="http://en.wikipedia.org/wiki/Brazil" target="blank">Brazil</a></li>
-      <li><a>Nothing</a></li>
+      <li><a href="http://en.wikipedia.org/wiki/Japan" target="blank">Japan</a>
+      </li>
+      <li><a href="http://en.wikipedia.org/wiki/Netherlands" target="blank">Netherlands</a>
+      </li>
+      <li><a href="http://en.wikipedia.org/wiki/Brazil" target="blank">Brazil</a>
+      </li>
+      <li><a>Nothing</a>
+      </li>
+    </ul>
+  </div>
+  <div style="height:50px"></div>
+  <div class="dropdown">
+    <input type="button" value="Right" class="square" />
+    <ul style="right:0">
+      <li><a href="http://en.wikipedia.org/wiki/Japan" target="blank">Japan</a>
+      </li>
+      <li><a href="http://en.wikipedia.org/wiki/Netherlands" target="blank">Netherlands</a>
+      </li>
+      <li><a href="http://en.wikipedia.org/wiki/Brazil" target="blank">Brazil</a>
+      </li>
+      <li><a>Nothing</a>
+      </li>
     </ul>
   </div>
 </div>
-<div style="height:50px">
-
-</div>
+<div style="height:50px"></div>
 <div class="dropdown">
   <ul>
-    <li><a href="http://en.wikipedia.org/wiki/Japan" target="blank">Japan</a></li>
-    <li><a href="http://en.wikipedia.org/wiki/Netherlands" target="blank">Netherlands</a></li>
-    <li><a href="http://en.wikipedia.org/wiki/Brazil" target="blank">Brazil</a></li>
-    <li><a>Nothing</a></li>
+    <li><a href="http://en.wikipedia.org/wiki/Japan" target="blank">Japan</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/Netherlands" target="blank">Netherlands</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/Brazil" target="blank">Brazil</a>
+    </li>
+    <li><a>Nothing</a>
+    </li>
   </ul>
-  <input type="button" value="Top" class="square"  />
+  <input type="button" value="Top" class="square" />
 </div>
-<script>$(".dropdown").autodropdown();</script>
+<script>
+  $(".dropdown").autodropdown();
+</script>

@@ -2,9 +2,12 @@
 <br/>
 <nav class="popmenu">
   <ul>
-    <li><a data-menu='#us'>United States<i class='fa fa-chevron-right pull-right'></i></a></li>
-    <li><a data-menu='#brazil'>Brazil<i class='fa fa-chevron-right pull-right'></i></a></li>
-    <li><a data-menu='#mexico'>Mexico<i class='fa fa-chevron-right pull-right'></i></a></li>
+    <li><a data-menu='#us'>United States<i class='fa fa-chevron-right pull-right'></i></a>
+    </li>
+    <li><a data-menu='#brazil'>Brazil<i class='fa fa-chevron-right pull-right'></i></a>
+    </li>
+    <li><a data-menu='#mexico'>Mexico<i class='fa fa-chevron-right pull-right'></i></a>
+    </li>
   </ul>
   <ul id='us'>
     <li>
@@ -14,7 +17,18 @@
       <a>Florida</a>
     </li>
     <li>
-      <a>Georgia</a>
+      <a data-menu='#us-ga'>Georgia<i class='fa fa-chevron-right pull-right'></i></a>
+    </li>
+  </ul>
+  <ul id='us-ga'>
+    <li>
+      <a>Atlanta</a>
+    </li>
+    <li>
+      <a>Athens</a>
+    </li>
+    <li>
+      <a>Columbus</a>
     </li>
   </ul>
   <ul id='brazil'>
@@ -43,7 +57,7 @@
 <input id='activate' type='button' value='activate' />
 <script>
   $('#activate').autopopmenu({
-      menu: $(".popmenu"),
-      position: 'bottom left'
-    });
+    menu: $(".popmenu"),
+    position: 'bottom left'
+  });
 </script>

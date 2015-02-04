@@ -1,63 +1,88 @@
 <h1>grid</h1>
 <br/>
-  <style>
-    table {
-      font-size: 12px;
-    }
-  </style>
-  <ul id="demotabs" class="autotab">
-    <li class="active"><a data-tab="#simple">Simple</a></li>
-    <li><a data-tab="#images">Images</a></li>
-    <li><a data-tab="#render">Render</a></li>
-    <li><a data-tab="#action">Action</a></li>
-    <li><a data-tab="#select">Select</a></li>
-    <li><a data-tab="#expand">Expand</a></li>
-    <li><a data-tab="#paging">Paging</a></li>
-    <li><a data-tab="#sorting">Sorting</a></li>
-  </ul>
-  <div style="margin-top:10px;font-size:12px" class="autotab">
-      <div id="simple" class="tab">
-        <div id="autogrid-simple"></div>
-        <script src="/js/auto.grid/demo.simple.js"></script>
-        <div style="margin: 15px 0"><a target="_blank" href="http://jsfiddle.net/timothyerwin/UZmLu/">jsfiddle.net</a></div>
-      </div>
-      <div id="images" class="tab">
-        <div id="autogrid-images"></div>
-        <script src="/js/auto.grid/demo.images.js"></script>
-        <div style="margin: 15px 0"><a target="_blank" href="http://jsfiddle.net/timothyerwin/2ZxpM/">jsfiddle.net</a></div>
-      </div>
-      <div id="render" class="tab">
-        <div id="autogrid-render"></div>
-        <script src="/js/auto.grid/demo.render.js"></script>
-        <div style="margin: 15px 0"><a target="_blank" href="http://jsfiddle.net/timothyerwin/DMCuw/">jsfiddle.net</a></div>
-      </div>
-      <div id="action" class="tab">
-        <div id="autogrid-action"></div>
-        <script src="/js/auto.grid/demo.action.js"></script>
-        <div style="margin: 15px 0"><a target="_blank" href="http://jsfiddle.net/timothyerwin/qy7Hf/">jsfiddle.net</a></div>
-      </div>
-      <div id="select" class="tab">
-        <div id="autogrid-select"></div>
-        <script src="/js/auto.grid/demo.select.js"></script>
-        <div style="margin: 15px 0"><a target="_blank" href="http://jsfiddle.net/timothyerwin/2MnKK/">jsfiddle.net</a></div>
-      </div>
-      <div id="expand" class="tab">
-        <div id="autogrid-expand"></div>
-        <script src="/js/auto.grid/demo.expand.js"></script>
-        <div style="margin: 15px 0"><a target="_blank" href="http://jsfiddle.net/timothyerwin/TR4qK/">jsfiddle.net</a></div>
-      </div>
-      <div id="sorting" class="tab">
-        <div id="autogrid-sorting"></div>
-        <script src="/js/auto.grid/demo.sorting.js"></script>
-        <div style="margin: 15px 0"><a target="_blank" href="http://jsfiddle.net/timothyerwin/YHT7c/">jsfiddle.net</a></div>
-      </div>
-      <div id="paging" class="tab">
-        <input type="button" value="Basic" style="margin-right:10px;width:150px" id="pager-basic" class="square"/>
-        <input type="button" value="Infinite" style="width:150px" id="pager-infinite" class="square"/><br/><br/><img id="spinner" src="/images/ajaxspinner.gif"/>
-        <div id="autogrid-paging"></div>
-        <script src="/js/auto.grid/demo.paging.js"></script>
-        <div style="margin: 15px 0"><a target="_blank" href="http://jsfiddle.net/timothyerwin/g9hkq/">jsfiddle.net</a></div>
-      </div>
+<style>
+  table {
+    font-size: 12px;
+  }
+  input[type=button] {
+    min-width: 150px;
+    margin-bottom: 10px;
+  }
+</style>
+<ul id="demotabs" class="autotab">
+  <li class="active"><a data-tab="#simple">Simple</a>
+  </li>
+  <li><a data-tab="#images">Images</a>
+  </li>
+  <li><a data-tab="#render">Render</a>
+  </li>
+  <li><a data-tab="#action">Action</a>
+  </li>
+  <li><a data-tab="#select">Select</a>
+  </li>
+  <li><a data-tab="#expand">Expand</a>
+  </li>
+  <li><a data-tab="#paging">Paging</a>
+  </li>
+  <li><a data-tab="#sorting">Sorting</a>
+  </li>
+</ul>
+<div style="margin-top:10px;font-size:12px" class="autotab">
+  <div id="simple" class="tab">
+    <div id="autogrid-simple"></div>
+    <script src="/js/auto.grid/demo.simple.js"></script>
+    <div style="margin: 15px 0"><a target="_blank" href="http://jsfiddle.net/timothyerwin/UZmLu/">jsfiddle.net</a>
+    </div>
   </div>
-  <script>$("#demotabs").autotabs();</script>
+  <div id="images" class="tab">
+    <div id="autogrid-images"></div>
+    <script src="/js/auto.grid/demo.images.js"></script>
+    <div style="margin: 15px 0"><a target="_blank" href="http://jsfiddle.net/timothyerwin/2ZxpM/">jsfiddle.net</a>
+    </div>
+  </div>
+  <div id="render" class="tab">
+    <div id="autogrid-render"></div>
+    <script src="/js/auto.grid/demo.render.js"></script>
+    <div style="margin: 15px 0"><a target="_blank" href="http://jsfiddle.net/timothyerwin/DMCuw/">jsfiddle.net</a>
+    </div>
+  </div>
+  <div id="action" class="tab">
+    <div id="autogrid-action"></div>
+    <script src="/js/auto.grid/demo.action.js"></script>
+    <div style="margin: 15px 0"><a target="_blank" href="http://jsfiddle.net/timothyerwin/qy7Hf/">jsfiddle.net</a>
+    </div>
+  </div>
+  <div id="select" class="tab">
+    <div id="autogrid-select"></div>
+    <script src="/js/auto.grid/demo.select.js"></script>
+    <div style="margin: 15px 0"><a target="_blank" href="http://jsfiddle.net/timothyerwin/2MnKK/">jsfiddle.net</a>
+    </div>
+  </div>
+  <div id="expand" class="tab">
+    <div id="autogrid-expand"></div>
+    <script src="/js/auto.grid/demo.expand.js"></script>
+    <div style="margin: 15px 0"><a target="_blank" href="http://jsfiddle.net/timothyerwin/TR4qK/">jsfiddle.net</a>
+    </div>
+  </div>
+  <div id="sorting" class="tab">
+    <div id="autogrid-sorting"></div>
+    <script src="/js/auto.grid/demo.sorting.js"></script>
+    <div style="margin: 15px 0"><a target="_blank" href="http://jsfiddle.net/timothyerwin/YHT7c/">jsfiddle.net</a>
+    </div>
+  </div>
+  <div id="paging" class="tab">
+    <input type="button" value="Basic" style="margin-right:10px;" id="pager-basic" class="square" />
+    <input type="button" value="Infinite" id="pager-infinite" class="square" />
+    <br/>
+    <br/>
+    <img id="spinner" src="/images/ajaxspinner.gif" />
+    <div id="autogrid-paging"></div>
+    <script src="/js/auto.grid/demo.paging.js"></script>
+    <div style="margin: 15px 0"><a target="_blank" href="http://jsfiddle.net/timothyerwin/g9hkq/">jsfiddle.net</a>
+    </div>
+  </div>
+</div>
+<script>
+  $("#demotabs").autotabs();
+</script>
 </h1>
