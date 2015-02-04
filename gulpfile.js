@@ -25,6 +25,11 @@ gulp.task('clean', function () {
       read: false
     })
     .pipe(clean());
+
+  gulp.src('dist', {
+      read: false
+    })
+    .pipe(clean());
 });
 
 gulp.task('css', function () {
@@ -126,7 +131,7 @@ gulp.task('drop-dist', function (cb) {
 
 gulp.task('bower', ['drop-dist'], function () {
   gulp.src(dest.build + "/**/*.*", {
-    base: './public/build'
+    base: './public/autojs'
   }).pipe(gulp.dest('./dist'));
 });
 
