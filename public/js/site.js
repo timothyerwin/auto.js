@@ -46,8 +46,12 @@ site.routes = (new function () {
 
   var routes = [{
     route: '/',
-    execute: 'grid.html',
-    nav: 'grid'
+    execute: 'home.html',
+    nav: 'home'
+  },{
+    route: '/home',
+    execute: 'home.html',
+    nav: 'home'
   },{
     route: '/grid',
     execute: 'grid.html',

@@ -95,10 +95,22 @@ h1 {
   margin: 0;
 }
 h2 {
-  color: #555;
+  color: #666;
+  font-family: Ubuntu, Arial;
+  text-transform: uppercase;
 }
 code {
   margin-top: 50px;
+}
+pre {
+  background: #fafafa;
+  padding: 20px 10px;
+  border: 1px solid #ddd;
+  -webkit-box-shadow: 0 0 7px rgba(0,0,0,0.1);
+  box-shadow: 0 0 7px rgba(0,0,0,0.1);
+  margin: 20px 0;
+  font-size: 1.2rem;
+  line-height: 1.55rem;
 }
 .gray {
   color: #ccc;
