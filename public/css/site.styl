@@ -34,11 +34,17 @@ a
 a.button
   display inline-block
   background #fff
-  border 1px solid #ddd
+  border 1px solid #ccc
   color #555
   padding 1rem 4rem
   text-transform uppercase
   text-align center
+  box-shadow 1px 1px 8px rgba(0,0,0,.05)
+  font-weight bold
+
+  &:hover
+    box-shadow 1px 1px 8px rgba(0,0,0,.15)
+    color #09c
 
 a.buttonactive, a.button.active
   box-shadow inset 0 0 7px rgba(0,0,0,.2)
@@ -89,15 +95,6 @@ h2
 
 code
   margin-top 50px
-
-pre
-  background #fafafa
-  padding 20px 10px
-  border 1px solid #ddd
-  box-shadow  0 0 7px rgba(0,0,0,.1)
-  margin 20px 0
-  font-size: 1.2rem
-  line-height 1.55rem
 
 .gray
   color #ccc

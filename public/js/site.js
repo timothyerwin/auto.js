@@ -78,10 +78,6 @@ site.routes = (new function () {
     execute: 'popmenu.html',
     nav: 'popmenu'
   }, {
-    route: '/download',
-    execute: 'download.html',
-    nav: 'download'
-  }, {
     route: '/license',
     execute: 'license.html',
     nav: 'license'
