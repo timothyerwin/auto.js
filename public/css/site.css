@@ -132,7 +132,7 @@ code {
 #content > aside {
   top: 0;
   left: 0;
-  width: 21rem;
+  width: 22rem;
   height: 100%;
   position: fixed;
   min-height: 100%;
@@ -171,8 +171,8 @@ code {
   box-sizing: border-box;
   position: relative;
   background: #fff;
-  padding: 50px;
-  margin-left: 21rem;
+  padding: 60px;
+  margin-left: 22rem;
   min-height: 100%;
 }
 @media only screen and (max-width: 600px) {
@@ -191,10 +191,9 @@ code {
   margin-bottom: 20px;
 }
 #logo {
-  font-size: 2.5rem;
+  font-size: 4rem;
   font-weight: bold;
   padding: 45px;
-  text-align: center;
 }
 @media only screen and (max-width: 600px) {
   #logo {
