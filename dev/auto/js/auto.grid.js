@@ -544,6 +544,7 @@ auto.grid.pagers.infinite = function(grid, settings) {
   var self = this,
     win = $(window),
     doc = $(document),
+    target = grid.getTarget(),
     offset = settings.offset || 300,
     enabled = false;
 
@@ -551,20 +552,30 @@ auto.grid.pagers.infinite = function(grid, settings) {
 
   this.settings = settings;
 
-  win.scroll(function() {
+  var next = function(){
+    var state = grid.getState();
+
+    grid.notify({
+      page: state.page + 1
+    });
+  };
+
+  var test = function(){
     if (!enabled)
       return;
 
-    if (win.scrollTop() > (doc.height() - win.height() - offset)) {
+    if (win.scrollTop() > ((target.offset().top + target.outerHeight()) - win.height() - offset)) {
       enabled = false;
 
-      var state = grid.getState();
-
-      grid.notify({
-        page: state.page + 1
-      });
+      next();
     }
+  };
+
+  win.scroll(function() {
+    test();
   });
+
+  test();
 
   grid.on("prerender", function(state) {
     enabled = true;
