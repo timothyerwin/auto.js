@@ -1,8 +1,5 @@
 #auto.js
 
-###Demo
-[autojs.azurewebsites.net](http://autojs.azurewebsites.net/)
-
 ###Install
 `bower install autojs`
 
